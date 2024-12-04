@@ -296,16 +296,16 @@ data:extend {maraxsis.merge(data.raw.planet.gleba, {
     flying_robot_energy_usage_multiplier = 1.5, -- todo: this doesnt work
 })}
 
-data:extend {{
-    type = "space-connection",
-    name = "vulcanus-maraxsis",
-    subgroup = "planet-connections",
-    from = "vulcanus",
-    to = "maraxsis",
-    order = "f",
-    length = 69471,
-    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_aquilo)
-}}
+-- data:extend {{
+--     type = "space-connection",
+--     name = "vulcanus-maraxsis",
+--     subgroup = "planet-connections",
+--     from = "vulcanus",
+--     to = "maraxsis",
+--     order = "f",
+--     length = 69471,
+--     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_aquilo)
+-- }}
 
 if mods.tenebris then
     data:extend {{
@@ -316,17 +316,17 @@ if mods.tenebris then
         to = "tenebris",
         order = "g",
         length = 7548,
-        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_aquilo)
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge)
     }}
 else
     data:extend {{
         type = "space-connection",
-        name = "fulgora-maraxsis",
+        name = "solar-system-edge-maraxsis",
         subgroup = "planet-connections",
-        from = "fulgora",
+        from = "solar-system-edge",
         to = "maraxsis",
         order = "f",
-        length = 62399,
-        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_aquilo)
+        length = 411541,
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge)
     }}
 end
