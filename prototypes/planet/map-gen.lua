@@ -315,7 +315,7 @@ if mods.tenebris then
         from = "maraxsis",
         to = "tenebris",
         order = "g",
-        length = 7548,
+        length = 126581,
         asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge)
     }}
 else
@@ -326,7 +326,7 @@ else
         from = "solar-system-edge",
         to = "maraxsis",
         order = "f",
-        length = 411541,
+        length = 3292328,
         asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge)
     }}
 end
