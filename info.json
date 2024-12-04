@@ -1,6 +1,6 @@
 {
   "name": "maraxsis",
-  "version": "100.18.14",
+  "version": "100.19.0",
   "title": "Maraxsis",
   "author": "notnotmelon, ArchEzekiel",
   "homepage": "https://github.com/notnotmelon/maraxsis",
@@ -12,6 +12,7 @@
     "Constructron-Continued >= 2.0.13",
     "SpidertronPatrols >= 2.5.3",
     "aai-signal-transmission >= 0.5.0",
+    "FluidMustFlow >= 1.4.0",
     "? hd_planets",
     "(?) tenebris",
     "! Land-Pump",
