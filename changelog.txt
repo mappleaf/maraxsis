@@ -1,4 +1,139 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.19.22
+Date: 2024-12-05
+  Locale:
+    - Added Russian translation. Credit to Raul Moreau
+---------------------------------------------------------------------------------------------------
+Version: 1.19.21
+Date: 2024-12-05
+  Compatibility:
+    - Fixed a crash when a mod nils the rocket-part-productivity technology. Resolves https://github.com/notnotmelon/maraxsis/issues/53
+  Bugfixes:
+    - Fixed deepsea research Icon compatibility issue. Resolves https://github.com/notnotmelon/maraxsis/issues/31
+    - Fixed Higher quality domes consume more atmosphere. Resolves https://github.com/notnotmelon/maraxsis/issues/50
+  Graphics:
+    - Changed the map color for the deepsea geothermal vent.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.20
+Date: 2024-12-05
+  Locale:
+    - Updated the underwater machines tips and tricks page. Resolves https://github.com/notnotmelon/maraxsis/issues/17
+---------------------------------------------------------------------------------------------------
+Version: 1.19.19
+Date: 2024-12-05
+  Bugfixes:
+    - Fixed a crash with pressure domes.
+    - Fixed the tips and tricks for maraxsis briefing
+    - Fixed the tips and tricks for maraxsis briefing
+---------------------------------------------------------------------------------------------------
+Version: 1.19.18
+Date: 2024-12-05
+  Graphics:
+    - New graphics for the regulator.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.17
+Date: 2024-12-05
+  Graphics:
+    - optimize sprites to decrease mod size
+---------------------------------------------------------------------------------------------------
+Version: 1.19.16
+Date: 2024-12-05
+  Changes:
+    - Added a temp fix for a softlock caused by no power in the trench. The regulator no longer needs energy and can activate machines with just air. Once the salt reactor is added this feature will go away.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.15
+Date: 2024-12-05
+  Bugfixes:
+    - Fixed abyssal diving gear not properly providing light.
+    - Fixed abyssal diving gear not protecting drowning damage.
+    - The abyssal diving gear can no longer be inserted into tanks.
+  Graphics:
+    - Improved the tech icon for abyssal diving gear.
+  Locale:
+    - Added a quality diamond to the abyssal diving gear tooltip.
+  Changes:
+    - Increased the energy usage for the abyssal diving gear from 100kW to 400kW
+    - Removed pistols in the hydro plant recipe.
+    - Slightly tweaked the collision box for the trench duct.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.14
+Date: 2024-12-05
+  Graphics:
+    - Increased the visible of trench ducts while underwater.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.13
+Date: 2024-12-05
+  Bugfixes:
+    - Fixed being able to force destroy dome tiles. Resolves https://github.com/notnotmelon/maraxsis/issues/34
+---------------------------------------------------------------------------------------------------
+Version: 1.19.12
+Date: 2024-12-05
+  Changes:
+    - Limestone processing can now be done in a foundry.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.11
+Date: 2024-12-05
+  Compatibility:
+    - Added hard requirement on SpidertronPatrols >= 2.5.4
+  Changes:
+    - Removed maraxsis crafting requirement for tungsten pipes.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.10
+Date: 2024-12-05
+  Compatibility:
+    - Fixed bugs with the ring teleporter mod. Resolves https://github.com/notnotmelon/maraxsis/issues/41
+---------------------------------------------------------------------------------------------------
+Version: 1.19.9
+Date: 2024-12-05
+  Bugfixes:
+    - Fixed crash on load.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.8
+Date: 2024-12-05
+  Bugfixes:
+    - Fixed infinite fluoroketone loop. Resolves https://github.com/notnotmelon/maraxsis/issues/43
+---------------------------------------------------------------------------------------------------
+Version: 1.19.7
+Date: 2024-12-05
+  Bugfixes:
+    - Fixed chimney vents not spawning on some surfaces.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.6
+Date: 2024-12-05
+  Bugfixes:
+    - Greatly increased the spawn rate for chimney vents.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.5
+Date: 2024-12-04
+  Compatibility:
+    - Blacklisted the "no-quality" mod.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.4
+Date: 2024-12-04
+  Bugfixes:
+    - Fixed difficulty entering submarine. Resolves https://github.com/notnotmelon/maraxsis/issues/36
+---------------------------------------------------------------------------------------------------
+Version: 1.19.3
+Date: 2024-12-04
+  Bugfixes:
+    - Items now float away. Resolves https://github.com/notnotmelon/maraxsis/issues/37
+---------------------------------------------------------------------------------------------------
+Version: 1.19.2
+Date: 2024-12-04
+  Bugfixes:
+    - Removed productivity limit from the sand recipe. Resolves https://github.com/notnotmelon/maraxsis/issues/38
+  Graphics:
+    - Reverted "Removed rain on maraxsis."
+  Changes:
+    - Added a new recipe to get nutrients on maraxsis. Should help fuel the biochambers.
+    - Reduced the glass requirement in the pressure dome from 1000 glass to 500 glass.
+    - The tungsten pipelining recipes must now be crafted on maraxsis.
+---------------------------------------------------------------------------------------------------
+Version: 1.19.1
+Date: 2024-12-04
+  Changes:
+    - Increased the logistics_radius of the regulator from 16 tiles to 22 tiles
+---------------------------------------------------------------------------------------------------
 Version: 1.19.0
 Date: 2024-12-04
   Features:

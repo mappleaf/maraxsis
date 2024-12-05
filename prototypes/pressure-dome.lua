@@ -51,7 +51,7 @@ data:extend {{
     ingredients = {
         {type = "item", name = "pump",                      amount = 10},
         {type = "item", name = "pipe",                      amount = 50},
-        {type = "item", name = "maraxsis-glass-panes",      amount = 1000},
+        {type = "item", name = "maraxsis-glass-panes",      amount = 500},
         {type = "item", name = "tungsten-plate",       amount = 200},
         {type = "item", name = "small-lamp",                amount = 30},
     },
@@ -260,10 +260,7 @@ data:extend {{
 local tile = maraxsis.merge(data.raw.tile["space-platform-foundation"], {
     name = "maraxsis-pressure-dome-tile",
     is_foundation = true,
-    minable = {
-        mining_time = 2 ^ 63 - 1, -- weird hack needed to make this a "top" tile. top tiles require minable properties however these dome tiles actually should not be minable
-        results = {},
-    },
+    minable = "nil",
     collision_mask = {layers = {[maraxsis_dome_collision_mask] = true}},
     map_color = {r = 0.5, g = 0.5, b = 0.75},
     can_be_part_of_blueprint = false,

@@ -1,8 +1,7 @@
 data:extend {{
     name = "maraxsis-abyssal-diving-gear",
     type = "technology",
-    icon = "__maraxsis__/graphics/technology/abyssal-diving-gear.png",
-    icon_size = 256,
+    icons = util.technology_icon_constant_equipment("__maraxsis__/graphics/technology/abyssal-diving-gear.png"),
     effects = {
         {
             type = "unlock-recipe",
@@ -73,11 +72,11 @@ data:extend {{
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        input_flow_limit = "150kW",
+        input_flow_limit = "500kW",
         buffer_capacity = "10kJ"
     },
-    energy_consumption = "100kW",
-    movement_bonus = 0.5,
+    energy_consumption = "400kW",
+    movement_bonus = 0.35,
     sprite = {
         filename = "__maraxsis__/graphics/technology/abyssal-diving-gear.png",
         width = 256,
@@ -91,3 +90,11 @@ data:extend {{
         type = "full"
     },
 }}
+
+local disabled = table.deepcopy(data.raw["movement-bonus-equipment"]["maraxsis-abyssal-diving-gear"])
+disabled.name = "maraxsis-abyssal-diving-gear-disabled"
+disabled.movement_bonus = 0
+disabled.energy_consumption = "1W"
+disabled.localised_name = {"equipment-name.maraxsis-abyssal-diving-gear"}
+disabled.localised_description = {"", {"equipment-description.maraxsis-abyssal-diving-gear"}, "\n", {"equipment-description.maraxsis-abyssal-diving-gear-disabled"}}
+data:extend {disabled}

@@ -10,6 +10,7 @@ local trench_wall = maraxsis.merge(data.raw["simple-entity"]["huge-rock"], {
     flags = {"placeable-neutral"},
     collision_box = {{-3, -3}, {3, 3}},
     selection_box = {{-3, -3}, {3, 3}},
+    render_layer = "object-under",
 })
 
 for _, picture in pairs(trench_wall.pictures) do
@@ -53,7 +54,8 @@ data:extend {trench_wall_collisionless}
 
 local maraxsis_chimney = table.deepcopy(data.raw["simple-entity"]["vulcanus-chimney"])
 maraxsis_chimney.name = "maraxsis-chimney"
-maraxsis_chimney.hidden = true
+maraxsis_chimney.hidden_in_factoriopedia = true
+maraxsis_chimney.map_color = {153, 166, 77}
 maraxsis_chimney.localised_name = {"entity-name.vulcanus-chimney"}
 data:extend {maraxsis_chimney}
 

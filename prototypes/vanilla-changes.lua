@@ -82,38 +82,22 @@ table.insert(data.raw["assembling-machine"]["biochamber"].crafting_categories, "
 table.insert(data.raw["assembling-machine"]["chemical-plant"].crafting_categories, "maraxsis-hydro-plant-or-chemistry")
 table.insert(data.raw["assembling-machine"]["foundry"].crafting_categories, "maraxsis-hydro-plant-or-foundry")
 
-table.insert(data.raw.technology["rocket-part-productivity"].effects, {
-    type = "change-recipe-productivity",
-    recipe = "maraxsis-rocket-part",
-    change = 0.1,
-    hidden = true
-})
+if data.raw.technology["rocket-part-productivity"] then
+    table.insert(data.raw.technology["rocket-part-productivity"].effects, {
+        type = "change-recipe-productivity",
+        recipe = "maraxsis-rocket-part",
+        change = 0.1,
+        hidden = true
+    })
+end
 
-table.insert(data.raw.technology["rocket-fuel-productivity"].effects, {
-    type = "change-recipe-productivity",
-    recipe = "maraxsis-hydrolox-rocket-fuel",
-    change = 0.1,
-})
-
-data:extend {{
-    type = "recipe",
-    name = "pistol",
-    enabled = false,
-    ingredients = {
-        {type = "item", name = "iron-plate",   amount = 5},
-        {type = "item", name = "copper-plate", amount = 5},
-    },
-    results = {
-        {type = "item", name = "pistol", amount = 1},
-    },
-    category = "crafting",
-    energy_required = 15,
-}}
-
-table.insert(data.raw["technology"]["military"].effects, 1, {
-    type = "unlock-recipe",
-    recipe = "pistol",
-})
+if data.raw.technology["rocket-fuel-productivity"] then
+    table.insert(data.raw.technology["rocket-fuel-productivity"].effects, {
+        type = "change-recipe-productivity",
+        recipe = "maraxsis-hydrolox-rocket-fuel",
+        change = 0.1,
+    })
+end
 
 local new_spidertron_effects = {}
 for _, effect in pairs(data.raw.technology["spidertron"].effects) do
@@ -146,6 +130,15 @@ for _, projectile in pairs(data.raw.projectile) do
         end
     end
     ::continue::
+end
+
+-- fix equipment grids for the abyssal diving gear
+local tank = data.raw.car.tank
+if tank.equipment_grid == "medium-equipment-grid" then
+    local medium_grid = table.deepcopy(data.raw["equipment-grid"]["medium-equipment-grid"])
+    medium_grid.name = "tank-equipment-grid"
+    data:extend{medium_grid}
+    tank.equipment_grid = "tank-equipment-grid"
 end
 
 for _, armor in pairs(data.raw.armor) do
