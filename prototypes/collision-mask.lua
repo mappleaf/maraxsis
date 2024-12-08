@@ -31,9 +31,6 @@ for prototype, _ in pairs(processed_prototypes) do
 end
 
 local prototypes_that_cant_be_placed_on_water = {
-    "container",
-    "linked-container",
-    "logistic-container",
     "accumulator",
     "lab",
     "assembling-machine",
@@ -129,6 +126,7 @@ local prototypes_that_can_be_placed_whereever = {
     data.raw["spider-vehicle"]["spidertron-enhancements-dummy-maraxsis-nuclear-submarine"],
     data.raw.roboport.service_station,
     data.raw.roboport["maraxsis-pressure-dome"],
+    data.raw.furnace["maraxsis-salt-reactor"]
 }
 
 for _, anywhere in pairs(prototypes_that_can_be_placed_whereever) do

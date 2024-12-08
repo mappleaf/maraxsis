@@ -179,13 +179,11 @@ data:extend {{
     pictures = tropical_fish_variants,
     stack_size = data.raw.capsule["raw-fish"].stack_size,
     capsule_action = table.deepcopy(data.raw.capsule["raw-fish"].capsule_action),
-    spoil_result = "spoilage",
-    spoil_ticks = data.raw.capsule["raw-fish"].spoil_ticks,
 }}
 local dmg = data.raw.capsule["maraxsis-tropical-fish"].capsule_action.attack_parameters.ammo_type.action.action_delivery.target_effects[1].damage
 dmg.amount = dmg.amount * 1.5
 
-data:extend{{
+data:extend {{
     type = "recipe",
     name = "maraxsis-nutrients-from-tropical-fish",
     icon = "__maraxsis__/graphics/icons/nutrients-from-tropical-fish.png",
@@ -237,13 +235,12 @@ data:extend {{
     energy_required = 2,
     ingredients = {
         {type = "item", name = "maraxsis-tropical-fish",   amount = 1},
-        {type = "item", name = "piercing-rounds-magazine", amount = 1},
     },
     results = {
         {type = "item", name = "maraxsis-microplastics", amount = 10},
         {type = "item", name = "jelly",                  amount = 10},
     },
-    category = "maraxsis-hydro-plant-or-biochamber",
+    category = "organic-or-assembling",
     localised_name = {"recipe-name.maraxsis-microplastics"},
     main_product = "maraxsis-microplastics",
     allow_productivity = true,
