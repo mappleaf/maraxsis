@@ -1,9 +1,9 @@
 local regulator = data.raw.roboport["service_station"]
 
-regulator.logistics_connection_distance = nil
-regulator.radar_range = 1
-regulator.logistics_radius = 22
-regulator.construction_radius = 0
+regulator.logistics_connection_distance = 90
+regulator.radar_range = 2
+regulator.logistics_radius = 30
+regulator.construction_radius = 30
 regulator.base_animation = nil
 regulator.base = nil
 regulator.base_patch = nil
@@ -93,6 +93,14 @@ data:extend {{
             filter = "maraxsis-atmosphere",
             secondary_draw_orders = {north = -1},
         },
+        smoke = {
+            {
+                name = "maraxsis-swimming-bubbles",
+                frequency = 100,
+                position = {-0.9, -2.7},
+                starting_vertical_speed = 0.03
+            }
+        }
     },
     effect_receiver = {
         uses_module_effects = false,

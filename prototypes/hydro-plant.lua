@@ -197,6 +197,9 @@ data:extend {{
 local extra_module_slots = table.deepcopy(data.raw["assembling-machine"]["maraxsis-hydro-plant"])
 extra_module_slots.name = "maraxsis-hydro-plant-extra-module-slots"
 extra_module_slots.module_slots = extra_module_slots.module_slots + 2
+extra_module_slots.icons_positioning = {{
+    inventory_index = defines.inventory.assembling_machine_modules, shift = {0, 0.9}, max_icons_per_row = 3
+}}
 extra_module_slots.hidden_in_factoriopedia = true
 extra_module_slots.factoriopedia_alternative = "maraxsis-hydro-plant"
 extra_module_slots.placeable_by = {{item = "maraxsis-hydro-plant", count = 1}}
@@ -220,10 +223,10 @@ data:extend {{
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "item", name = "tungsten-plate",      amount = 35},
-        {type = "item", name = "pipe",             amount = 30},
-        {type = "fluid", name = "maraxsis-saline-water", amount = 300},
-        {type = "item", name = mods.upcycler and "speed-module-3" or "quality-module-3", amount = 4},
+        {type = "item",  name = "tungsten-plate",                                         amount = 20},
+        {type = "item",  name = "pipe",                                                   amount = 10},
+        {type = "fluid", name = "maraxsis-saline-water",                                  amount = 300},
+        {type = "item",  name = mods.upcycler and "speed-module-3" or "quality-module-3", amount = 1},
     },
     results = {
         {type = "item", name = "maraxsis-hydro-plant", amount = 1},

@@ -293,7 +293,7 @@ local function place_tiles(pressure_dome_data)
     surface.set_tiles(tiles, true, false, true, false)
 end
 
-local DEFAULT_MARAXSIS_TILE = "dirt-5-underwater"
+local DEFAULT_MARAXSIS_TILE = "sand-3-underwater"
 local function unplace_tiles(pressure_dome_data)
     local surface = pressure_dome_data.surface
     if not surface.valid then return end
@@ -810,6 +810,7 @@ maraxsis.on_event(maraxsis.events.on_entity_clicked(), function(event)
         local dome = pressure_dome_data.entity
         if not dome.valid then return end
         pressure_dome_data.light = create_dome_light(pressure_dome_data)
+        light = pressure_dome_data.light
     end
 
     local wire_type = figure_out_wire_type(player)
@@ -876,15 +877,12 @@ maraxsis.on_nth_tick(73, function()
         local regulator_fluidbox = dome_data.regulator_fluidbox
         if not regulator_fluidbox or not regulator_fluidbox.valid then goto continue end
 
-        --local powered = regulator.energy > 0
-        local powered = true -- todo: revert this once the salt reactor is added
-        local has_fluid = (regulator_fluidbox.get_fluid_count("maraxsis-atmosphere") > 0) and regulator_fluidbox.is_crafting()
-        local powered_and_has_fluid = powered and has_fluid
+        local powered_and_has_fluid = (regulator_fluidbox.get_fluid_count("maraxsis-atmosphere") > 0) and regulator_fluidbox.is_crafting()
         if powered_and_has_fluid == dome_data.powered_and_has_fluid then goto continue end
 
         for _, e in pairs(dome_data.contained_entities) do
             if can_be_diabled_by_dome_low_pressure(e) then
-                e.active = not not powered_and_has_fluid                
+                e.active = not not powered_and_has_fluid
             end
         end
 
@@ -892,4 +890,18 @@ maraxsis.on_nth_tick(73, function()
 
         ::continue::
     end
+end)
+
+-- https://github.com/notnotmelon/maraxsis/issues/34
+maraxsis.on_event(maraxsis.events.on_mined_tile(), function(event)
+    local dome_tiles_to_rebuild = {}
+    for _, tile in pairs(event.tiles) do
+        local name = tile.old_tile.name
+        if name == PRESSURE_DOME_TILE then
+            dome_tiles_to_rebuild[#dome_tiles_to_rebuild + 1] = {position = tile.position, name = name}
+        end
+    end
+    if not dome_tiles_to_rebuild[1] then return end
+    local surface = game.get_surface(event.surface_index)
+    surface.set_tiles(dome_tiles_to_rebuild, true, false, false, false)
 end)

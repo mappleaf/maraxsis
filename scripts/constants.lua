@@ -7,8 +7,8 @@ _G.maraxsis_trench_entrance_collision_mask = "maraxsis_trench_entrance_collision
 local TRENCH_MOVEMENT_FACTOR = 1
 
 local SUBMARINES = {
-    ["maraxsis-diesel-submarine"] = {r = 255, g = 195, b = 0, a = 0.5},
-    ["maraxsis-nuclear-submarine"] = {r = 0.3, g = 0.8, b = 0.3, a = 0.5},
+    ["maraxsis-diesel-submarine"] = {r = 0.8, g = 0.6, b = 0, a = 0.5},
+    ["maraxsis-nuclear-submarine"] = {r = 0.2, g = 0.7, b = 0.2, a = 0.5},
 }
 
 local TRENCH_SURFACE_NAME = "maraxsis-trench"
@@ -57,6 +57,7 @@ local DOME_EXCLUDED_FROM_DISABLE = {
     ["chemical-plant"] = true,
     ["maraxsis-hydro-plant"] = true,
     ["maraxsis-hydro-plant-extra-module-slots"] = true,
+    ["maraxsis-salt-reactor"] = true,
 }
 
 return {

@@ -25,7 +25,7 @@ add_hydraulic_pack("promethium-science-pack", false)
 table.insert(data.raw["technology"]["promethium-science-pack"].prerequisites, "maraxsis-deepsea-research")
 add_hydraulic_pack("research-productivity", false)
 
-for _, machine_type in pairs{"assembling-machine", "rocket-silo", "furnace", "character"} do
+for _, machine_type in pairs {"assembling-machine", "rocket-silo", "furnace", "character"} do
     for _, machine in pairs(data.raw[machine_type] or {}) do
         if machine.crafting_categories then
             for _, category in pairs(machine.crafting_categories) do
@@ -50,6 +50,9 @@ data.raw.recipe["fluid-wagon"].category = "maraxsis-hydro-plant-or-assembling"
 data.raw.recipe["recycler"].category = "maraxsis-hydro-plant-or-assembling"
 data.raw.recipe["heating-tower"].category = "maraxsis-hydro-plant-or-assembling"
 data.raw.recipe["boiler"].category = "maraxsis-hydro-plant-or-assembling"
+data.raw.recipe["heat-exchanger"].category = "maraxsis-hydro-plant-or-assembling"
+data.raw.recipe["nuclear-reactor"].category = "maraxsis-hydro-plant-or-assembling"
+data.raw.recipe["steam-turbine"].category = "maraxsis-hydro-plant-or-assembling"
 
 for _, silo in pairs(data.raw["rocket-silo"]) do
     if silo.fixed_recipe == "rocket-part" then
@@ -99,6 +102,14 @@ if data.raw.technology["rocket-fuel-productivity"] then
     })
 end
 
+if data.raw.technology["plastic-bar-productivity"] then
+    table.insert(data.raw.technology["plastic-bar-productivity"].effects, 2, {
+        type = "change-recipe-productivity",
+        recipe = "maraxsis-smelt-microplastics",
+        change = 0.1,
+    })
+end
+
 local new_spidertron_effects = {}
 for _, effect in pairs(data.raw.technology["spidertron"].effects) do
     if effect.recipe ~= "service_station" and effect.recipe ~= "constructron" then
@@ -137,7 +148,7 @@ local tank = data.raw.car.tank
 if tank.equipment_grid == "medium-equipment-grid" then
     local medium_grid = table.deepcopy(data.raw["equipment-grid"]["medium-equipment-grid"])
     medium_grid.name = "tank-equipment-grid"
-    data:extend{medium_grid}
+    data:extend {medium_grid}
     tank.equipment_grid = "tank-equipment-grid"
 end
 
