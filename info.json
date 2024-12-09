@@ -1,6 +1,6 @@
 {
   "name": "maraxsis",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "title": "Maraxsis",
   "author": "notnotmelon, ArchEzekiel, Mappleaf",
   "description": "Dive into the uncharted waters of Maraxsis, a world where the sea covers everything. Utilize submarines to explore, craft advanced fluids inside the hydro plant, build pressure domes, and master the challenges of deep-sea logistics. But BEWARE: You aren't alone in these depths...",
@@ -10,13 +10,12 @@
     "base",
     "space-age >= 2.0.21",
     "Constructron-Continued >= 2.0.13",
-    "SpidertronPatrols >= 2.5.4",
+    "SpidertronPatrols >= 2.5.5",
     "FluidMustFlow >= 1.4.0",
     "? aai-signal-transmission",
     "(?) tenebris",
     "! Land-Pump",
-    "! buoyant-spidertrons",
-    "! no-quality"
+    "! buoyant-spidertrons"
   ],
   "quality_required": true,
   "space_travel_required": true,

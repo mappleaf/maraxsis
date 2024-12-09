@@ -5,7 +5,7 @@ data.raw.technology["ducts"].research_trigger = {
     type = "mine-entity",
     entity = "maraxsis-chimney"
 }
-data.raw.technology["ducts"].prerequisites = {"maraxsis-hydro-plant", "cliff-explosives"}
+data.raw.technology["ducts"].prerequisites = {"sp-spidertron-automation"}
 
 data:extend {{
     type = "item",
@@ -22,8 +22,8 @@ data:extend {{
     name = "maraxsis-trench-duct",
     enabled = false,
     ingredients = {
-        {type = "item", name = "duct-small",     amount = 300},
-        {type = "item", name = "tungsten-plate", amount = 300},
+        {type = "item", name = "duct-small",     amount = 100},
+        {type = "item", name = "tungsten-plate", amount = 100},
         {type = "item", name = "pump",           amount = 10},
     },
     results = {
