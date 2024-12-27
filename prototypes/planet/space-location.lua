@@ -80,27 +80,27 @@ data.raw.planet["maraxsis"].persistent_ambient_sounds.wind = {
     },
 }
 
-data:extend {{
-    type = "space-connection",
-    name = "vulcanus-maraxsis",
-    subgroup = "planet-connections",
-    from = "vulcanus",
-    to = "maraxsis",
-    order = "f",
-    length = 20000,
-    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_aquilo)
-}}
+-- data:extend {{
+--     type = "space-connection",
+--     name = "vulcanus-maraxsis",
+--     subgroup = "planet-connections",
+--     from = "vulcanus",
+--     to = "maraxsis",
+--     order = "f",
+--     length = 20000,
+--     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_aquilo)
+-- }}
 
-data:extend {{
-    type = "space-connection",
-    name = "fulgora-maraxsis",
-    subgroup = "planet-connections",
-    from = "fulgora",
-    to = "maraxsis",
-    order = "f",
-    length = 20000,
-    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_aquilo)
-}}
+-- data:extend {{
+--     type = "space-connection",
+--     name = "fulgora-maraxsis",
+--     subgroup = "planet-connections",
+--     from = "fulgora",
+--     to = "maraxsis",
+--     order = "f",
+--     length = 126581,
+--     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_aquilo)
+-- }}
 
 if mods.tenebris then
     data:extend {{
@@ -110,7 +110,18 @@ if mods.tenebris then
         from = "maraxsis",
         to = "tenebris",
         order = "g",
-        length = 20000,
-        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_aquilo)
+        length = 126581,
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge)
+    }}
+else
+    data:extend {{
+        type = "space-connection",
+        name = "solar-system-edge-maraxsis",
+        subgroup = "planet-connections",
+        from = "solar-system-edge",
+        to = "maraxsis",
+        order = "f",
+        length = 3292328,
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge)
     }}
 end
