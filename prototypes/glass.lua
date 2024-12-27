@@ -6,7 +6,7 @@ data:extend {{
     effects = {
         {
             type = "unlock-recipe",
-            recipe = "maraxsis-sand",
+            recipe = "maraxsis-sand-extraction",
         },
         {
             type = "unlock-recipe",
@@ -59,7 +59,7 @@ data:extend {{
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "item", name = "maraxsis-sand",      amount = 3},
+        {type = "item", name = "sand",      amount = 3},
         {type = "item", name = "maraxsis-limestone", amount = 1},
         {type = "item", name = "maraxsis-salt",      amount = 1},
     },
@@ -68,12 +68,13 @@ data:extend {{
     },
     allow_productivity = true,
     category = "metallurgy",
+    auto_recycle = true
 }}
 
 local glass_variants = {}
-for i = 1, 9 do
+for i = 1, 6 do
     glass_variants[i] = {
-        filename = "__maraxsis__/graphics/icons/glass-panes-" .. i .. ".png",
+        filename = "__maraxsis__/graphics/icons/glass-" .. i .. ".png",
         width = 64,
         height = 64,
         scale = 1 / 2,
@@ -84,7 +85,7 @@ end
 data:extend {{
     type = "item",
     name = "maraxsis-glass-panes",
-    icon = "__maraxsis__/graphics/icons/glass-panes-1.png",
+    icon = "__maraxsis__/graphics/icons/glass-1.png",
     pictures = glass_variants,
     icon_size = 64,
     stack_size = 200,
@@ -103,41 +104,11 @@ end
 
 data:extend {{
     type = "item",
-    name = "maraxsis-sand",
+    name = "sand",
     icon = "__maraxsis__/graphics/icons/sand-3.png",
     pictures = sand_variants,
     icon_size = 64,
     stack_size = 100,
-}}
-
-data:extend {{
-    type = "technology",
-    name = "maraxsis-glass-productivity",
-    icons = util.technology_icon_constant_recipe_productivity("__maraxsis__/graphics/technology/glass-productivity.png"),
-    icon_size = 256,
-    effects = {
-        {
-            type = "change-recipe-productivity",
-            recipe = "maraxsis-glass-panes",
-            change = 0.1
-        },
-    },
-    prerequisites = {"maraxsis-project-seadragon"},
-    unit = {
-        count_formula = "1.5^L*1000",
-        ingredients = {
-            {"automation-science-pack",  1},
-            {"logistic-science-pack",    1},
-            {"chemical-science-pack",    1},
-            {"production-science-pack",  1},
-            {"utility-science-pack",     1},
-            {"metallurgic-science-pack", 1},
-            {"hydraulic-science-pack",   1},
-        },
-        time = 60
-    },
-    max_level = "infinite",
-    upgrade = true
 }}
 
 data:extend {{

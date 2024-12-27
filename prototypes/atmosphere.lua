@@ -55,10 +55,10 @@ data:extend {{
     },
     prerequisites = {"cryogenic-science-pack", "maraxsis-project-seadragon"},
     unit = {
-        count = 1000,
+        count = 5000,
         ingredients = {
-            {"hydraulic-science-pack",   1},
-            {"cryogenic-science-pack",   1},
+            {"hydraulic-science-pack", 1},
+            {"cryogenic-science-pack", 1},
         },
         time = 60
     },

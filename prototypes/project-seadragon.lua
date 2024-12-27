@@ -19,6 +19,10 @@ data:extend {{
             type = "unlock-recipe",
             recipe = "maraxsis-super-sealant-substance"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "maraxsis-petroleum-gas-cracking"
+        },
     },
     prerequisites = {"hydraulic-science-pack", "coal-liquefaction"},
     unit = {
@@ -39,6 +43,7 @@ maraxsis_rocket_part.enabled = false
 maraxsis_rocket_part.surface_conditions = {
     {property = "pressure", min = 200000, max = 200000},
 }
+maraxsis_rocket_part.auto_recycle = false
 maraxsis_rocket_part.order = data.raw.item["rocket-part"].order .. "-a[maraxsis]"
 data:extend {maraxsis_rocket_part}
 
@@ -49,7 +54,7 @@ data:extend {{
     energy_required = 10,
     ingredients = {
         {type = "fluid", name = "maraxsis-oxygen",   amount = 200},
-        {type = "fluid", name = "maraxsis-hydrogen", amount = 400},
+        {type = "fluid", name = "maraxsis-hydrogen", amount = 200},
     },
     results = {
         {type = "item", name = "rocket-fuel", amount = 1},
@@ -77,11 +82,7 @@ data:extend {{
     enabled = false,
     category = "chemistry-or-cryogenics",
     allow_productivity = true,
-    surface_conditions = {{
-        property = "gravity",
-        min = 0,
-        max = 0,
-    }}
+    auto_recycle = false,
 }}
 
 local super_sealant_substance_variants = {}

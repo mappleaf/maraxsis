@@ -10,10 +10,10 @@ data.raw.technology["ducts"].prerequisites = {"sp-spidertron-automation"}
 data:extend {{
     type = "item",
     name = "maraxsis-trench-duct",
-    icon = "__FluidMustFlow__/graphics/icons/buildings/duct-to-ground.png",
+    icon = "__maraxsis__/graphics/icons/trench-duct.png",
     stack_size = 5,
     place_result = "maraxsis-trench-duct",
-    subgroup = "energy-pipe-distribution",
+    subgroup = "ducts",
     order = "d[pipe]-x[trench-duct]"
 }}
 
@@ -55,7 +55,7 @@ end
 data:extend {{
     type = "storage-tank",
     name = "maraxsis-trench-duct",
-    icon = "__FluidMustFlow__/graphics/icons/buildings/duct-to-ground.png",
+    icon = "__maraxsis__/graphics/icons/trench-duct.png",
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.8, result = "maraxsis-trench-duct"},
     fast_replaceable_group = "ducts",
@@ -64,6 +64,37 @@ data:extend {{
     collision_mask = {layers = {object = true, [maraxsis_collision_mask] = true, train = true, is_object = true, is_lower_object = true}},
     tile_buildability_rules = {
         {area = {{-1, -2}, {1, -1.5}}, required_tiles = {layers = {maraxsis_collision_mask = true}}, colliding_tiles = {layers = {}}},
+    },
+    integration_patch_render_layer = "under-tiles",
+    integration_patch = {
+        north = {
+            filename = "__maraxsis__/graphics/entity/trench-duct/trench-duct.png",
+            width = 128,
+            height = 561,
+            scale = 0.5,
+            shift = {-0.05, 4}
+        },
+        east = {
+            filename = "__maraxsis__/graphics/entity/trench-duct/trench-duct.png",
+            width = 128,
+            height = 561,
+            scale = 0.5,
+            shift = {0, 4.3}
+        },
+        south = {
+            filename = "__maraxsis__/graphics/entity/trench-duct/trench-duct.png",
+            width = 128,
+            height = 561,
+            scale = 0.5,
+            shift = {0, 4.3}
+        },
+        west = {
+            filename = "__maraxsis__/graphics/entity/trench-duct/trench-duct.png",
+            width = 128,
+            height = 561,
+            scale = 0.5,
+            shift = {-0.1, 4.3}
+        },
     },
     placeable_position_visualization = table.deepcopy(data.raw["offshore-pump"]["offshore-pump"].placeable_position_visualization),
     surface_conditions = {{
@@ -182,7 +213,7 @@ data:extend {{
 data:extend {{
     type = "storage-tank",
     name = "maraxsis-trench-duct-lower",
-    icon = "__FluidMustFlow__/graphics/icons/buildings/duct-to-ground.png",
+    icon = "__maraxsis__/graphics/icons/trench-duct.png",
     hidden = true,
     factoriopedia_alternative = "maraxsis-trench-duct",
     localised_name = {"entity-name.maraxsis-trench-duct"},
