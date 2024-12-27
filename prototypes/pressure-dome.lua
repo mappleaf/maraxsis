@@ -64,10 +64,10 @@ local function collision_box() return {{-16, -16}, {16, 16}} end
 
 data:extend {{
     type = "roboport",
-    logistics_connection_distance = data.raw.roboport["service_station"].logistics_connection_distance,
-    radar_range = data.raw.roboport["service_station"].radar_range,
-    logistics_radius = data.raw.roboport["service_station"].logistics_radius,
-    construction_radius = data.raw.roboport["service_station"].construction_radius,
+    logistics_connection_distance = data.raw.roboport["maraxsis-regulator"].logistics_connection_distance,
+    radar_range = data.raw.roboport["maraxsis-regulator"].radar_range,
+    logistics_radius = data.raw.roboport["maraxsis-regulator"].logistics_radius,
+    construction_radius = data.raw.roboport["maraxsis-regulator"].construction_radius,
     energy_source = {type = "void"},
     energy_usage = "0W",
     recharge_minimum = "0W",
@@ -94,7 +94,7 @@ data:extend {{
             cage_shadow,
             base_shadow,
             dome,
-        }, table.deepcopy(data.raw.roboport["service_station"].integration_patch.layers))
+        }, table.deepcopy(data.raw.roboport["maraxsis-regulator"].integration_patch.layers))
     },
     surface_conditions = maraxsis.surface_conditions(),
     build_sound = {
@@ -263,11 +263,12 @@ local tile = maraxsis.merge(data.raw.tile["space-platform-foundation"], {
         mining_time = 2 ^ 63 - 1, -- weird hack needed to make this a "top" tile. top tiles require minable properties however these dome tiles actually should not be minable
         results = {},
     },
-    collision_mask = {layers = {[maraxsis_dome_collision_mask] = true}},
+    collision_mask = {layers = {[maraxsis_dome_collision_mask] = true, [maraxsis_fishing_tower_collision_mask] = true}},
     map_color = {r = 0.5, g = 0.5, b = 0.75},
     can_be_part_of_blueprint = false,
     layer_group = "ground-artificial"
 })
+tile.variants.transition = table.deepcopy(data.raw.tile["concrete"].variants.transition),
 data:extend {tile}
 
 local blank_animation = {
@@ -314,4 +315,15 @@ data:extend {{
             percent = 100
         },
     }
+}}
+
+data:extend {{
+    type = "sprite",
+    name = "maraxsis-flooded-warning",
+    filename = "__maraxsis__/graphics/icons/flooded-warning.png",
+    width = 64,
+    height = 64,
+    scale = 0.5,
+    shift = {0, 0},
+    flags = {"no-crop", "no-scale", "icon"},
 }}

@@ -10,14 +10,10 @@ data:extend {{
         },
         {
             type = "unlock-recipe",
-            recipe = "maraxsis-atomic-torpedo",
-        },
-        {
-            type = "unlock-recipe",
             recipe = "maraxsis-fat-man",
         },
     },
-    prerequisites = {"cliff-explosives", "maraxsis-torpedoes", "atomic-bomb"},
+    prerequisites = {"cliff-explosives", "maraxsis-nuclear-submarine", "atomic-bomb"},
     unit = {
         count = 5000,
         ingredients = {
@@ -113,7 +109,7 @@ data:extend {maraxsis.merge(data.raw.projectile["cliff-explosives"], {
                     },
                     {
                         explosion = "explosion",
-                        radius = 300,
+                        radius = 450,
                         type = "destroy-cliffs"
                     },
                     {
