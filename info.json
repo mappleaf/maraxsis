@@ -1,8 +1,9 @@
 {
   "name": "maraxsis",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "author": "notnotmelon, Mappleaf",
-  "title": "Maraxsis","description": "Dive into the uncharted waters of Maraxsis, a world where the sea covers everything. Utilize submarines to explore, craft advanced fluids inside the hydro plant, build pressure domes, and master the challenges of deep-sea logistics.",
+  "title": "Maraxsis",
+  "description": "Dive into the uncharted waters of Maraxsis, a world where the sea covers everything. Utilize submarines to explore, craft advanced fluids inside the hydro plant, build pressure domes, and master the challenges of deep-sea logistics.",
   "homepage": "https://github.com/mappleaf/maraxsis",
   "factorio_version": "2.0",
   "dependencies": [
