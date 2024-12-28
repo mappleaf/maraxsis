@@ -61,7 +61,7 @@ data:extend {{
     ingredients = {
         {type = "item", name = "sand",      amount = 3},
         {type = "item", name = "maraxsis-limestone", amount = 1},
-        {type = "item", name = "maraxsis-salt",      amount = 1},
+        {type = "item", name = "maraxsis-salt",      amount = 2},
     },
     results = {
         {type = "item", name = "maraxsis-glass-panes", amount = 1},
@@ -109,6 +109,36 @@ data:extend {{
     pictures = sand_variants,
     icon_size = 64,
     stack_size = 100,
+}}
+
+data:extend {{
+    type = "technology",
+    name = "maraxsis-glass-productivity",
+    icons = util.technology_icon_constant_recipe_productivity("__maraxsis__/graphics/technology/glass-productivity.png"),
+    icon_size = 256,
+    effects = {
+        {
+            type = "change-recipe-productivity",
+            recipe = "maraxsis-glass-panes",
+            change = 0.1
+        },
+    },
+    prerequisites = {"maraxsis-project-seadragon"},
+    unit = {
+        count_formula = "1.5^L*1000",
+        ingredients = {
+            {"automation-science-pack",  1},
+            {"logistic-science-pack",    1},
+            {"chemical-science-pack",    1},
+            {"production-science-pack",  1},
+            {"utility-science-pack",     1},
+            {"metallurgic-science-pack", 1},
+            {"hydraulic-science-pack",   1},
+        },
+        time = 60
+    },
+    max_level = "infinite",
+    upgrade = true
 }}
 
 data:extend {{
