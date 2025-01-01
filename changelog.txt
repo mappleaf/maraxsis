@@ -1,4 +1,43 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.27.10
+Date: 2024-12-31
+  Bugfixes:
+    - Fixed crash when other mods remove submarine fuel inventory.
+  Changes:
+    - To prevent softlocks, a submarine will now teleport to your position on death.
+---------------------------------------------------------------------------------------------------
+Version: 1.27.9
+Date: 2024-12-31
+  Bugfixes:
+    - Fixed migrating nauvis constructions to submarines.
+---------------------------------------------------------------------------------------------------
+Version: 1.27.8
+Date: 2024-12-29
+  Locale:
+    - Add factoriopedia description for trench entrance tiles to explain how to find the trench.
+---------------------------------------------------------------------------------------------------
+Version: 1.27.7
+Date: 2024-12-29
+  Compatibility:
+    - Added compat with the "maraxsis start" mod
+---------------------------------------------------------------------------------------------------
+Version: 1.27.6
+Date: 2024-12-29
+  Compatibility:
+    - Fixed crash when installing both "quality seeds" "maraxsis" and "all recipes prod techs" all at the same time.
+---------------------------------------------------------------------------------------------------
+Version: 1.27.5
+Date: 2024-12-28
+  Graphics:
+    - Removed "maraxsis-hd" from the mod files.
+  Changes:
+    - The maraxsis trench no longer appears in the starmap.
+---------------------------------------------------------------------------------------------------
+Version: 1.27.4
+Date: 2024-12-28
+  Bugfixes:
+    - Fixed out of map tiles getting migrated to trench tiles when maraxsis is installed.
+---------------------------------------------------------------------------------------------------
 Version: 1.27.3
 Date: 2024-12-28
   Locale:
